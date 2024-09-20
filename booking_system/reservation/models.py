@@ -21,7 +21,7 @@ class Place(models.Model):
     type_building = models.CharField(max_length=50, choices=TypeBuilding.choices)
 
     def __str__(self):
-        return self.name, self.price
+        return f"{self.name}, {self.price}"
 
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -31,4 +31,4 @@ class Booking(models.Model):
     status = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.user, self.place
+        return f"{self.user}, {self.place}"
